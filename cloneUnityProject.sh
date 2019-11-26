@@ -1,6 +1,5 @@
 #!/bin/sh
 
-# [ 汎用 ] ScriptPathの取得. 
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 PROJECT_DIR=$(cd ./; pwd)
 
@@ -10,9 +9,10 @@ mkdir ../${PROJECT_NAME}
 rm -r ../${PROJECT_NAME}/*
 CLONE_DIR=$(cd ../${PROJECT_NAME}; pwd)
 
-# clean and create symbolic link
-folders=("Assets" "Packages" "ProjectSettings")
+# シンボリックリンクの対象フォルダー.
+folders=("Assets" "Packages" "ProjectSettings" "Library")
 
+# ↓以下処理でシンボリックの作成を行う.
 for FOLDER in ${folders[@]}
 do
     echo "[ folders ] : "${FOLDER}
