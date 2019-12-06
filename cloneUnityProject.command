@@ -1,9 +1,9 @@
 #!/bin/sh
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
+cd ${SCRIPT_DIR}/../
+
 PROJECT_DIR=$(cd ./; pwd)
 PROJECT_NAME="UnityProj_SymbolicLink"
-
-cd ${SCRIPT_DIR}
 
 mkdir ../${PROJECT_NAME}
 rm -r ../${PROJECT_NAME}/*
