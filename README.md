@@ -1,9 +1,10 @@
-<!-- # unity-multiclient -->
+# unity-multiclient
 
+<!--
 <p align="center">
     <h1 align="center">unity multi-client</h1>
 </p>
-
+-->
 
 ベースとなるUnityProjectからシンボリックリンクを生成します。
 
