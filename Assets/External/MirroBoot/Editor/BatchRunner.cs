@@ -86,7 +86,7 @@ namespace AriaSDK.MirrorBoot.Editor
 				return false;
 			}
 
-			execPath = $"{Path.Combine(path,exec)}";
+			execPath = $"{Path.Combine(path, exec)}";
 
 			if (!File.Exists(execPath))
 			{
