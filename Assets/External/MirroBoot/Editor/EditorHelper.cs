@@ -11,11 +11,15 @@ namespace AriaSDK.MirrorBoot.Editor
 	/// </summary>
 	internal static class EditorHelper
 	{
+		const string FILE_NAME = "setupSynchronzableProject.sh";
+
+
 		[UnityEditor.MenuItem("AriaSDK/Tools/GenerateSynchronizableProject")]
 		private static void GenerateSynchronizableProject()
 		{
-			var runner = new BatchRunner();
-			runner.Run();
+			var runner = new BatchRunner($"{Application.dataPath}/External/MirroBoot/", $"{FILE_NAME}");
+			string log = runner.Run();
+			Debug.Log(log);
 		}
 	}
 }
