@@ -58,8 +58,6 @@ namespace AriaSDK.MirrorBoot.Editor
 				return;
 			}
 
-			Debug.Log(path);
-
 			var shellRunner = new BatchRunner($"{path}", $"{FILE_NAME}");
 			{
 				string log = shellRunner.Run();
