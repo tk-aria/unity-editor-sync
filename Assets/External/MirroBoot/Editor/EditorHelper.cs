@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.IO;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -28,6 +29,26 @@ namespace AriaSDK.MirrorBoot.Editor
 			return (results.Count > 0) ? results[0].Replace($"{FILE_NAME}", ""): null;
 		}
 
+		struct UnityAppInfo
+		{
+			public string path;
+			public string exec;
+		}
+
+		private static UnityAppInfo GetUnityAppInfo()
+		{
+			string unityAppPath = $"{EditorApplication.applicationPath}";
+
+			return new UnityAppInfo{
+				path = Path.GetDirectoryName(unityAppPath),
+				exec = Path.GetFileName(unityAppPath)
+			#if UNITY_EDITOR_OSX
+					+ "/Contents/MacOS/Unity"
+			#endif
+			};
+
+		}
+
 		[UnityEditor.MenuItem("AriaSDK/Tools/GenerateSynchronizableProject")]
 		private static void GenerateSynchronizableProject()
 		{
@@ -39,9 +60,26 @@ namespace AriaSDK.MirrorBoot.Editor
 
 			Debug.Log(path);
 
-			var runner = new BatchRunner($"{path}", $"{FILE_NAME}");
-			string log = runner.Run();
-			Debug.Log(log);
+			var shellRunner = new BatchRunner($"{path}", $"{FILE_NAME}");
+			{
+				string log = shellRunner.Run();
+				Debug.Log(log);
+			}
+
+			var unityAppInfo = GetUnityAppInfo();
+
+			var unityCmdParam = new System.Diagnostics.ProcessStartInfo{
+				FileName = $"{unityAppInfo.path}/{unityAppInfo.exec}",
+				Arguments = $"-projectPath ../Synchronizable{Application.productName}"
+			};
+			System.Diagnostics.Process.Start(unityCmdParam);
+
+			// [todo] wait for exit.
+			//var unityCommandline = new BatchRunner(unityAppInfo.path, unityAppInfo.exec);
+			//{
+			//	string log = unityCommandline.Run($"-projectPath ../Synchronizable{Application.productName}");
+			//	Debug.Log(log);
+			//}
 		}
 	}
 }
