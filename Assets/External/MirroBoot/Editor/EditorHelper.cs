@@ -39,7 +39,7 @@ namespace AriaSDK.MirrorBoot.Editor
 
 			Debug.Log(path);
 
-			var runner = new BatchRunner($"{Application.dataPath}/External/MirroBoot/", $"{FILE_NAME}");
+			var runner = new BatchRunner($"{path}", $"{FILE_NAME}");
 			string log = runner.Run();
 			Debug.Log(log);
 		}
