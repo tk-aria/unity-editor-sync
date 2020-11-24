@@ -15,7 +15,7 @@ namespace AriaSDK.MirrorBoot.Editor
 	{
 #if UNITY_EDITOR_WIN
 		const string FILE_NAME = "setupSynchronzableProject.bat";
-#else // UNITY_EDITOR_OSX
+#else // UNITY_EDITOR_OSX || 
 		const string FILE_NAME = "setupSynchronzableProject.sh";
 #endif 
 
@@ -35,7 +35,7 @@ namespace AriaSDK.MirrorBoot.Editor
 			public string exec;
 		}
 
-		private static UnityAppInfo GetUnityAppInfo()
+		private static UnityAppInfo CreateUnityAppInfo()
 		{
 			string unityAppPath = $"{EditorApplication.applicationPath}";
 
@@ -64,7 +64,7 @@ namespace AriaSDK.MirrorBoot.Editor
 				Debug.Log(log);
 			}
 
-			var unityAppInfo = GetUnityAppInfo();
+			var unityAppInfo = CreateUnityAppInfo();
 
 			var unityCmdParam = new System.Diagnostics.ProcessStartInfo{
 				FileName = $"{unityAppInfo.path}/{unityAppInfo.exec}",
