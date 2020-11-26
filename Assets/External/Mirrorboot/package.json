@@ -1,0 +1,22 @@
+{
+	"name": "com.ariasdk.unity-mirrorboot",
+	"version": "0.0.1",
+	"unity": "2018.3",
+	"displayName": "Mirrorboot",
+	"description": "provide unity3d multiple client.",
+	"category": "Unity",
+	"keywords": [ "Unity"],
+	"dependencies": {
+	},
+	"samples": [
+		{
+			"displayName": "Example",
+			"description": "how to use.",
+			"path": "Samples~/Example"
+		}
+	],
+	"author": {
+		"name": "tkaria",
+		"url": "https://tk3118.hatenablog.com"
+	}
+}
