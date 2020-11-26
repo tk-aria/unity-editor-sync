@@ -14,9 +14,9 @@ namespace AriaSDK.MirrorBoot.Editor
 	internal static class EditorHelper
 	{
 #if UNITY_EDITOR_WIN
-		const string FILE_NAME = "setupSynchronzableProject.bat";
+		const string FILE_NAME = "setupSynchronizableProject.bat";
 #else // UNITY_EDITOR_OSX || 
-		const string FILE_NAME = "setupSynchronzableProject.sh";
+		const string FILE_NAME = "setupSynchronizableProject.sh";
 #endif 
 
 		private static string GetScriptPath()
