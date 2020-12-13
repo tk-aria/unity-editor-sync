@@ -1,6 +1,6 @@
 {
-	"name": "com.ariasdk.unity-mirrorboot",
-	"version": "0.0.1",
+	"name": "com.ariasdk.u3d-mirrorboot",
+	"version": "0.1.0",
 	"unity": "2018.3",
 	"displayName": "Mirrorboot",
 	"description": "provide unity3d multiple client.",
