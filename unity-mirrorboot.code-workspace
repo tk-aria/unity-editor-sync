@@ -1,0 +1,21 @@
+  
+{
+    "folders": [
+        {
+            "name": "example-project",
+            "path": "."
+        },
+        {
+            "name": "Mirrorboot",
+            "path": "Assets/External/Mirrorboot"
+        },
+    ],
+    "settings": {},
+    "extensions": {
+        "recommendations": [
+            "ms-dotnettools.csharp",
+            "unity.unity-debug",
+            "editorconfig.editorconfig"
+        ]
+    }
+}
