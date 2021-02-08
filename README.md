@@ -1,7 +1,8 @@
 # unity-mirrorboot
-multiple launches of the same 'Unity Project'
 
-https://gitpod.io/#https://github.com/tk-aria/unity-mirrorboot
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/tk-aria/unity-mirrorboot)
+
+multiple launches of the same 'Unity Project'
 
 ## Install
 
