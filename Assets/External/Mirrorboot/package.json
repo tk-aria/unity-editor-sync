@@ -1,8 +1,8 @@
 {
-	"name": "com.ariasdk.u3d-mirrorboot",
+	"name": "com.ariasdk.unity-editor-sync",
 	"version": "0.1.0",
 	"unity": "2018.3",
-	"displayName": "Mirrorboot",
+	"displayName": "EditorSync",
 	"description": "provide unity3d multiple client.",
 	"category": "Unity",
 	"keywords": [ "Unity"],
